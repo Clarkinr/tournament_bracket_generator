@@ -17,8 +17,14 @@ def teams_taking_part():
 teams_taking_part()
 
 def gen_num_games(team_list):
-
-    rd1_games = len(team_list) // 2
-    print(f"There will be {rd1_games} games in round 1\n")
+    match_split = list()
+    game_size = 2
+    for i in range(0, len(team_list), game_size):
+        match_split.append(team_list[i:i+game_size])
+    print(match_split)
 gen_num_games(team_list)
 
+
+
+#rd1_games = len(team_list) // 2
+#print(f"There will be {rd1_games} games in round 1\n")
