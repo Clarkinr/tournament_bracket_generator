@@ -34,10 +34,25 @@ def gen_num_games(team_list):
 gen_num_games(team_list)
 
 def round_one_matches(match_split):
-    rd1_games = len(team_list) // 2
+    """
+    Shows each of the games to be played in round one
+    """
+    rd1_games = len(match_split)
     print(f"There will be {rd1_games} games in round 1: \n")
     for i in range(0, len(match_split)):
         print(f"Game {i+1}: {match_split[i][0]} VS {match_split[i][1]}\n")
         i += 1
+    return rd1_games
 
 round_one_matches(match_split)
+
+def advance_round(match_split):
+    for i in range(0, len(match_split)):
+        result = list(input(f"What was the score for game {i+1}? \n Enter the score separated by a '-': \n{match_split[i][0]} VS {match_split[i][1]}\n"))
+        print(result)
+        if result[0] > result[2]:
+            print(f"{match_split[i][0]} advances to next round")
+        else:
+            print(f"{match_split[i][1]} advances to next round")
+        i += 1
+advance_round(match_split)
