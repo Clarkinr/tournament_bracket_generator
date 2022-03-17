@@ -15,9 +15,10 @@ def teams_taking_part():
     for i in range(0, num_teams):
         i += 1
         team_name = team_list.append(str(input(f"\nPlease enter name for team no {i}: \n")))
-    if len(team_list) != 4 or 8 or 16:
+    while len(team_list) not in [4, 8, 16]:
         add_bye = team_list.append("BYE")
     return team_list
+    
 
 def gen_num_games(team_list):
     """
