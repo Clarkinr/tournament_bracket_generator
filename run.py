@@ -9,6 +9,9 @@ round_2 = []
 round_3 = []
 
 def teams_taking_part():
+    """
+    Requests team names from the user one by one and adds them to the team_list
+    """
     num_teams = int(input("How many teams are taking part you can have up to 16: \n"))
     for i in range(0, num_teams):
         i += 1
@@ -17,6 +20,11 @@ def teams_taking_part():
 teams_taking_part()
 
 def gen_num_games(team_list):
+    """
+    Shuffle the team list in order to have randomly assigned games
+    Splits team list into groups of two for games.
+    """
+    random.shuffle(team_list)
     match_split = list()
     game_size = 2
     for i in range(0, len(team_list), game_size):
