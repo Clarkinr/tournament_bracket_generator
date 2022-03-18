@@ -16,8 +16,13 @@ def teams_taking_part():
     """
     print("Welcome to the Tournament Generator: \n\n")
 
-    num_teams = int(input("Enter Teams taking part Min: 4 & Max: 16: \n\n"))
-
+    num_teams = int(input("Enter Teams taking part Min: 2 & Max: 16: \n\n"))
+    if num_teams > 16 :
+        print("Number of teams must be between 2 and 16")
+        teams_taking_part()
+    else:
+        pass
+    
     for i in range(0, num_teams):
         i += 1
         team = team_list.append(str(input(f"Enter name for team no {i}:\n\n")))
